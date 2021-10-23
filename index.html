@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 19</title>
+</head>
+<style>
+    b{
+        color: grey;
+        font-size: 25px;
+    }
+</style>
+
+<body style="text-align: center;">
+
+    <script>
+        
+// JavaScript program to find the most frequent element
+//in an array
+let c1 = prompt("Enter the 1st Value");
+let c2 = prompt("Enter the 2nd Value");
+let c3 = prompt("Enter the 3rd Value");
+let c4 = prompt("Enter the 4th Value");
+let c5 = prompt("Enter the 5th Value");
+let c6 = prompt("Enter the 6th Value");
+let c7 = prompt("Enter the th Value");
+
+
+	function mostFrequent(arr, n)
+	{
+		
+		// Sort the array
+		arr.sort();
+		
+		// find the max frequency using linear
+		// traversal
+		let max_count = 1, res = arr[0];
+		let curr_count = 1;
+		
+		for (let i = 1; i < n; i++)
+		{
+			if (arr[i] == arr[i - 1])
+				curr_count++;
+			else
+			{
+				if (curr_count > max_count)
+				{
+					max_count = curr_count;
+					res = arr[i - 1];
+				}
+				curr_count = 1;
+			}
+		}
+		// If last element is most frequent
+		if (curr_count > max_count)
+		{
+			max_count = curr_count;
+			res = arr[n - 1];
+		}
+		return res;
+	}
+	
+// Driver Code
+
+		let arr = [c1, c2, c3, c4, c5, c6, c7];
+		let n = arr.length;
+    let result = "Here Three is the most repeated value in array is :<b>  " + (mostFrequent(arr,n)) + "</b>";
+      document.write(result)
+// This code is contributed by code_hunt.
+</script>
+
+
+
+
+</body>
+
+</html>
